@@ -1,0 +1,6 @@
+<% var tagsList = list_tags({ show_count: false });
+if (tagsList) { %>
+<%- tagsList %>
+<% } else { %>
+<p>None.</p>
+<% } %>

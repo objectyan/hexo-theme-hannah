@@ -1,0 +1,52 @@
+<meta charset="utf-8">
+<!--begin title-->
+<%
+var title = page.title || config.subtitle || '';
+if (is_archive()) {
+    title = __('archive_a');
+
+    if (is_month()) {
+        title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()) {
+        title += ': ' + page.year;
+    }
+} else if (is_category()) {
+    title = __('category') + ': ' + page.category;
+} else if (is_tag()) {
+    title = __('tag') + ': ' + page.tag;
+}
+%>
+<title><% if (title){ %> <%= title %> | <% } %><%= config.title %></title>
+<!--end title-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--begin mete-->
+<%
+var arrMate = ["description", "author"];
+arrMate.forEach(function(mate, i){
+    if(config[mate]){ %>
+    <meta name="<%= mate %>" content="<%= config[mate] %>"/>
+    <% }
+});
+%>
+<!--end mete-->
+<!--begin keywords-->
+<meta name="keywords" content="<%= list_tags({style:'nolist' ,separator:',',show_count:false}) || title %>"/>
+<!--end keywords-->
+<!--begin rss-->
+<% if (theme.rss){ %>
+<link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+<% } %>
+<!--end rss-->
+<!--begin favicon-->
+<% if (theme.favicon){ %>
+<link rel="icon" href="<%- theme.favicon %>">
+<% } %>
+<!--end favicon-->
+<!--begin style-->
+<% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+<!-- stylesheets list from config.yml -->
+<% theme.stylesheets.forEach(function(url) { %>
+<link rel="stylesheet" href="<%=url%>">
+<% }); %>
+<% } %>
+<!--end style-->

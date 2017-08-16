@@ -1,0 +1,25 @@
+
+# html lang
+language: en
+
+# main menu navigation
+menu:
+  Home: /
+  Category: /categories
+  Tag: /tags
+  Archives: /archives
+  About: /about
+
+# RSS
+rss: /atom.xml
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/hannah.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/hannah.js
