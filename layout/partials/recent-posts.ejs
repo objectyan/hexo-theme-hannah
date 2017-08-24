@@ -1,16 +1,60 @@
-
-<% if (site.posts.length > 0) { %>
-  <div id="recent-posts">
-    <h1>Recent Posts</h1>
-    <% site.posts.sort('date', -1).limit(10).each(function(post) { %>
-      <div class="recent-post-item">
-        <a href="<%=config.root + post.path%>"><%=post.title%></a>
-        <% if (post.date) { %>
-          <time datetime="<%=post.date.toJSON()%>">
-            <%=date(post.date)%>
-          </time>
+<% if (page.posts.length > 0) { %>
+<div class="row recent-posts">
+    <% page.posts.each(function(post) { %>
+    <div class="recent-post-item">
+        <div class="item-head">
+            <h3 class="title">
+                <a href="<%= config.root + post.path %>">
+                    <%= post.title %>
+                </a>
+            </h3>
+            <% if (post.date) { %>
+            <time datetime="<%= post.date.toJSON() %>" class="item">
+                <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= date(post.date) %>
+            </time>
+            <% } %>
+            <% if (post.categories && post.categories.length) {
+            %>
+            <span class="item">
+                  <i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;&nbsp;
+                <%
+                post.categories.forEach(function (cate) {
+                %>
+                <a class="label label-primary tags" href="<%- url_for(cate.path) %>">
+                       <i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;<%- cate.name %>
+                    </a>
+                <%
+                })
+                %>
+            </span>
+            <%
+            } %>
+        </div>
+        <% if(post.excerpt){ %>
+        <div class="item-content">
+            <%- post.excerpt %>
+        </div>
         <% } %>
-      </div>
+        <div class="item-footer">
+            <% if (post.tags && post.tags.length) {
+            %>
+            <span class="item">
+                    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;
+                <%
+                post.tags.forEach(function (tag) {
+                %>
+                <a class="label label-info tags" href="<%- url_for(tag.path) %>">
+                        <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<%- tag.name %>
+                    </a>
+                <%
+                })
+                %>
+            </span>
+            <%
+            } %>
+            <a class="look" href="<%= config.root + post.path %>">Look >></a>
+        </div>
+    </div>
     <% }); %>
-  </div>
+</div>
 <% } %>

@@ -1,0 +1,40 @@
+<div class="hannah-menu hide">
+    <i class="fa fa-ravelry fa-2x btn fixed-menu" aria-hidden="true"></i>
+    <div class="menu-outer">
+        <!--begin handImg-->
+        <h3 class="text-center">
+            <%
+            if(theme.headImg && theme.headImg.url){
+            %>
+            <img src="<%= theme.headImg.url %>" alt="Head Image" class="img-circle">
+            <% }else if(theme.headImg && theme.headImg.gravatar
+                    && theme.headImg.gravatar.email){
+                var option = theme.headImg.gravatar.option || {};
+            %>
+            <%- gravatar(theme.headImg.gravatar.email, option) %>
+            <% } %>
+        </h3>
+        <!--end handImg-->
+        <dl>
+            <dt>
+                Menu
+            </dt>
+            <dd>
+                <% Object.keys(theme.menu).forEach(function(key, idx) { %>
+                <div class="col-md-4 col-xs-6 col-sm-4 text-center">
+                    <a href="<%= theme.menu[key].url || theme.menu[key] %>" class="btn btn-block">
+                        <%
+                            var icon = "";
+                            if (theme.menu[key].icon) {
+                                icon = theme.menu[key].icon;
+                            }
+                        %>
+                        <i class="<%= icon %>"></i>
+                        <%= key %>
+                    </a>
+                </div>
+                <% }); %>
+            </dd>
+        </dl>
+    </div>
+</div>

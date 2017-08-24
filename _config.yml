@@ -4,14 +4,31 @@ language: en
 
 # main menu navigation
 menu:
-  Home: /
-  Category: /categories
-  Tag: /tags
-  Archives: /archives
-  About: /about
+  Home:
+    url: /
+    icon: fa fa-ravelry
+  Category:
+    url: /categories
+    icon: fa fa-cubes
+  Tag:
+    url: /tags
+    icon: fa fa-tags
+  Archives:
+    url: /archives
+    icon: fa fa-archive
+  About:
+    url: /about
+    icon: fa fa-id-card-o
 
 # RSS
 rss: /atom.xml
+
+# headImg url and gravatar
+headImg:
+  url: http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787
+  gravatar:
+    email:
+    option:
 
 # Miscelaneous
 favicon: /favicon.ico
