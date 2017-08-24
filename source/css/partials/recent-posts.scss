@@ -1,0 +1,30 @@
+.recent-posts {
+  .recent-post-item {
+    border: 1px dashed #cccccc;
+    margin: 15px auto;
+    border-radius: 5px;
+    padding: 0px 15px 20px;
+
+    .item-head, .item-content {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .item-head, .item-footer {
+      .item {
+        margin-right: 8px;
+        .tags {
+          margin-right: 1px;
+        }
+      }
+    }
+
+    .item-footer {
+      padding-top: 3px;
+      .look {
+        float: right;
+      }
+    }
+
+  }
+}

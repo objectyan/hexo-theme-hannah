@@ -1,0 +1,10 @@
+//import boostrap css
+@import "./bootstrap/_bootstrap";
+//import font-awesome icon
+@import "font-awesome/font-awesome";
+//import partials css
+@import "./partials/partials";
+
+a:hover {
+  text-decoration: none;
+}

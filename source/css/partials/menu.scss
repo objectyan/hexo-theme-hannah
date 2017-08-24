@@ -1,0 +1,33 @@
+.hannah-menu {
+  .fixed-menu {
+    position: fixed;
+    left: 2.5%;
+    bottom: 10%;
+  }
+
+  .menu-outer {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    //background-color: rgba(1, 28, 1, 0.31);
+
+    dl {
+      margin: 5% auto;
+      dt {
+        padding-left: 10%;
+      }
+
+      dd {
+        div {
+          margin: 10px 0;
+        }
+      }
+
+    }
+
+  }
+
+}
