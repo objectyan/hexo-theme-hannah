@@ -1,0 +1,27 @@
+$xs-max-width: 768px !default;
+.hannah-toc {
+  list-style: none;
+  position: fixed;
+  right: 10px;
+  top: 20%;
+  padding: 10px;
+
+  * {
+    color: #c0c0c0;
+  }
+
+  a:hover .hannah-toc-text {
+    color: #23527c !important;
+  }
+
+  .hannah-toc-child {
+    list-style: none;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: $xs-max-width) {
+  .hannah-toc {
+    display: none;
+  }
+}

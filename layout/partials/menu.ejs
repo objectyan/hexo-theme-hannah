@@ -1,6 +1,6 @@
-<div class="hannah-menu hide">
-    <i class="fa fa-ravelry fa-2x btn fixed-menu" aria-hidden="true"></i>
-    <div class="menu-outer">
+<div class="hannah-menu">
+    <i class="fa fa-ravelry fa-2x btn fixed-menu animated bounce" id="btn_menu" aria-hidden="true"></i>
+    <div class="menu-outer container-fluid hide animated" id="div_menu">
         <!--begin handImg-->
         <h3 class="text-center">
             <%
@@ -15,26 +15,58 @@
             <% } %>
         </h3>
         <!--end handImg-->
-        <dl>
-            <dt>
-                Menu
-            </dt>
-            <dd>
-                <% Object.keys(theme.menu).forEach(function(key, idx) { %>
-                <div class="col-md-4 col-xs-6 col-sm-4 text-center">
-                    <a href="<%= theme.menu[key].url || theme.menu[key] %>" class="btn btn-block">
-                        <%
-                            var icon = "";
-                            if (theme.menu[key].icon) {
-                                icon = theme.menu[key].icon;
+        <div class="row">
+            <div class="menu-content col-md-8 col-md-push-2 col-xs-12 ">
+                <dl class="menu-content-item">
+                    <dt class="menu-content-title">
+                        <i class="fa fa-bars" aria-hidden="true"></i> Menu
+                    </dt>
+                    <dd class="menu-content-content">
+                        <% Object.keys(theme.menu).forEach(function(key, idx) { %>
+                        <div class="col-md-4 col-xs-6 col-sm-4 text-center">
+                            <a href="<%= theme.menu[key].url || theme.menu[key] %>" class="btn btn-block">
+                                <%
+                                    var icon = "";
+                                    if (theme.menu[key].icon) {
+                                        icon = theme.menu[key].icon;
+                                    }
+                                %>
+                                <i class="<%= icon %>"></i>
+                                <%= key %>
+                            </a>
+                        </div>
+                        <% }); %>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="menu-content col-md-8 col-md-offset-2 col-xs-12 ">
+                <dl class="col-md-6 col-xs-6 menu-content-item">
+                    <dt class="menu-content-title">
+                        <i class="fa fa-cubes" aria-hidden="true"></i> Category
+                    </dt>
+                    <dd class="menu-content-content">
+                        <%- list_categories({
+                            show_count: true, depth: -1, class: 'menu-cate', transform: function (cate) {
+                                return "<i class=\"fa fa-cube\" aria-hidden=\"true\"></i> " + cate;
                             }
-                        %>
-                        <i class="<%= icon %>"></i>
-                        <%= key %>
-                    </a>
-                </div>
-                <% }); %>
-            </dd>
-        </dl>
+                        }) %>
+                    </dd>
+                </dl>
+                <dl class="col-md-6 col-xs-6 menu-content-item">
+                    <dt class="menu-content-title">
+                        <i class="fa fa-tag" aria-hidden="true"></i> Tags
+                    </dt>
+                    <dd class="menu-content-content">
+                        <%- list_tags({
+                            show_count: true, depth: -1, class: 'menu-tag', transform: function (tag) {
+                                return "<i class=\"fa fa-tag\" aria-hidden=\"true\"></i> " + tag;
+                            }
+                        }) %>
+                    </dd>
+                </dl>
+            </div>
+        </div>
     </div>
 </div>

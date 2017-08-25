@@ -1,0 +1,50 @@
+<div class="row animated rubberBand">
+    <ul class="bread-crumb">
+        <li><a href="<%- url_for('/') %>"><i class="fa fa-ravelry" aria-hidden="true"></i> Home</a></li>
+        <% if(!is_home()){
+        if(is_category()){ %>
+        <li><a href="<%- url_for('/categories') %>"><i class="fa fa-cubes" aria-hidden="true"></i> Category</a></li>
+        <% } else if(is_tag()){ %>
+        <li><a href="<%- url_for('/tags') %>"><i class="fa fa-tags" aria-hidden="true"></i> Tags</a></li>
+        <% } else if(is_archive()){ %>
+        <li><a href="<%- url_for('/archives') %>"><i class="fa fa-archive" aria-hidden="true"></i> Archives</a></li>
+        <% }  else if(is_post()){
+        if (page.categories && page.categories.length)
+        page.categories.forEach(function (cate) {
+        %>
+        <li><a href="<%- url_for(cate.path) %>"><i class="fa fa-cube" aria-hidden="true"></i> <%- cate.name %></a></li>
+        <%
+        });
+        }
+            var lastInfo = page.title || page.tag || page.category;
+        if(lastInfo){ %>
+        <li>
+            <%
+            if((path || "").toLowerCase().indexOf("categories/".toLowerCase()) === 0){
+            %>
+            <i class="fa fa-cube" aria-hidden="true"></i>
+            <%
+            }else if((path || "").toLowerCase().indexOf("Tags/".toLowerCase()) === 0){
+            %>
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            <%
+            }else if((path || "").toLowerCase().indexOf("About/".toLowerCase()) === 0){
+            %>
+            <i class="fa fa-id-card-o" aria-hidden="true"></i>
+            <%
+            }else if((path || "").toLowerCase().indexOf("archives/".toLowerCase()) === 0){
+            %>
+            <i class="fa fa-archive" aria-hidden="true"></i>
+            <%
+            }else{
+            %>
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+            <%
+            }
+            %>
+            <%- lastInfo %>
+        </li>
+        <% }
+        } %>
+    </ul>
+</div>

@@ -1,10 +1,13 @@
-//import boostrap css
-@import "./bootstrap/_bootstrap";
-//import font-awesome icon
-@import "font-awesome/font-awesome";
+//import mixins
+@import "./mixins/mixins";
+//impoert styles css
+@import "./styles/styles";
+//@import "bootstrap/bootstrap";
 //import partials css
 @import "./partials/partials";
+//import font-awesome icon
+@import "./font-awesome/font-awesome";
 
-a:hover {
-  text-decoration: none;
+body {
+  overflow-x: hidden;
 }
