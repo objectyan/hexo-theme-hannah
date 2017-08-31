@@ -5,9 +5,17 @@ $xs-max-width: 768px !default;
   right: 10px;
   top: 20%;
   padding: 10px;
+  width: 17%;
+  max-width: 17%;
+  word-break: break-all;
 
   * {
     color: #c0c0c0;
+  }
+
+  .hannah-toc-item {
+    border-bottom: 1px dashed #3e3e3e;
+    margin-bottom: 8px;
   }
 
   a:hover .hannah-toc-text {

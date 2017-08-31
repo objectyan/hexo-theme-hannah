@@ -1,5 +1,44 @@
 <article class="post animated rollIn">
-    <h1><%= page.title %></h1>
+    <h1 class="post-title"><%= page.title %></h1>
+    <div class="post-subtitle">
+        <% if (page.date) { %>
+        <time datetime="<%= page.date.toJSON() %>" class="item">
+            <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= date(page.date) %>
+        </time>
+        <% } %>
+        <% if (page.categories && page.categories.length) {
+        %>
+        <span class="item">
+      <i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;
+            <%
+            page.categories.forEach(function (cate) {
+            %>
+            <a class="label label-primary tags" href="<%- url_for(cate.path) %>">
+           <i class="fa fa-cube" aria-hidden="true"></i>&nbsp;<%- cate.name %>
+        </a>
+            <%
+            })
+            %>
+        </span>
+        <%
+        } %>
+        <% if (page.tags && page.tags.length) {
+        %>
+        <span class="item">
+        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
+            <%
+            page.tags.forEach(function (tag) {
+            %>
+            <a class="label label-info tags" href="<%- url_for(tag.path) %>">
+            <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<%- tag.name %>
+            </a>
+            <%
+            })
+            %>
+        </span>
+        <%
+        } %>
+    </div>
     <%- page.content %>
 </article>
 <%- toc(page.content, {class: 'animated rollIn hannah-toc', list_number: false}) %>

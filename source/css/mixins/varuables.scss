@@ -1,3 +1,91 @@
+//
+// Color system
+//
+
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$grays: () !default;
+$grays: map-merge((
+        100: $gray-100,
+        200: $gray-200,
+        300: $gray-300,
+        400: $gray-400,
+        500: $gray-500,
+        600: $gray-600,
+        700: $gray-700,
+        800: $gray-800,
+        900: $gray-900
+), $grays);
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+$colors: map-merge((
+        blue: $blue,
+        indigo: $indigo,
+        purple: $purple,
+        pink: $pink,
+        red: $red,
+        orange: $orange,
+        yellow: $yellow,
+        green: $green,
+        teal: $teal,
+        cyan: $cyan,
+        white: $white,
+        gray: $gray-600,
+        gray-dark: $gray-800
+), $colors);
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+        primary: $blue,
+        secondary: $gray-600,
+        success: $green,
+        info: $cyan,
+        warning: $yellow,
+        danger: $red,
+        light: $gray-100,
+        dark: $gray-800
+), $theme-colors);
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: 8% !default;
+
 $gray-base: #000 !default;
 $gray-darker: lighten($gray-base, 13.5%) !default; // #222
 $gray-dark: lighten($gray-base, 20%) !default; // #333
@@ -10,6 +98,9 @@ $brand-success: #5cb85c !default;
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
+
+$border-width: 1px !default;
+$border-color: $gray-200 !default;
 
 //== Scaffolding
 //
@@ -249,3 +340,43 @@ $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) 
 $state-danger-text:              #a94442 !default;
 $state-danger-bg:                #f2dede !default;
 $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: (
+        0: 0,
+        1: ($spacer * .25),
+        2: ($spacer * .5),
+        3: $spacer,
+        4: ($spacer * 1.5),
+        5: ($spacer * 3)
+) !default;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:            .75rem !default;
+$table-cell-padding-sm:         .3rem !default;
+
+$table-bg:                      transparent !default;
+$table-accent-bg:               rgba($black,.05) !default;
+$table-hover-bg:                rgba($black,.075) !default;
+$table-active-bg:               $table-hover-bg !default;
+
+$table-border-width:            $border-width !default;
+$table-border-color:            $gray-200 !default;
+
+$table-head-bg:                 $gray-200 !default;
+$table-head-color:              $gray-700 !default;
+
+$table-dark-bg:              $gray-900 !default;
+$table-dark-accent-bg:       rgba($white, .05) !default;
+$table-dark-hover-bg:        rgba($white, .075) !default;
+$table-dark-border-color:    lighten($gray-900, 7.5%) !default;
+$table-dark-color:           $body-bg !default;
