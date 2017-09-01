@@ -1,4 +1,13 @@
 (function (win) {
+    function resizeFoot() {
+        var footer = document.getElementById("footer");
+        if (document.body.offsetHeight <= document.documentElement.clientHeight) {
+            footer.style.bottom = "0px";
+        } else {
+            delete footer.style.bottom;
+        }
+    }
+
     win.onload = function () {
         var btnMenu = document.getElementById("btn_menu");
         if (btnMenu) {
@@ -13,6 +22,9 @@
                 }
             });
         }
+        var interval = setInterval(function () {
+            resizeFoot();
+        }, 500);
 
     }
 })(window);
