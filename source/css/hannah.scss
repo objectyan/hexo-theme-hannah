@@ -1,11 +1,11 @@
 //import mixins
-@import "./_mixins/mixins";
+@import "mixins/mixins";
 //import styles css
-@import "./_styles/styles";
+@import "styles/styles";
 //import partials css
-@import "./_partials/partials";
+@import "partials/partials";
 //import font-awesome icon
-@import "./_font-awesome/font-awesome";
+@import "font-awesome/font-awesome";
 
 body {
   overflow-x: hidden;

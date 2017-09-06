@@ -1,0 +1,76 @@
+.hannah-menu {
+  .fixed-menu {
+    position: fixed;
+    left: 2.5%;
+    bottom: 10%;
+    z-index: 10000;
+    cursor: pointer;
+  }
+
+  .menu-outer {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 28, 1, 0.31);
+
+    .menu-content {
+      background-color: white;
+      border-radius: 15px;
+      border: 0.15em dotted #bfbfbf;
+      margin-bottom: 10px;
+
+      .menu-content-item {
+        padding: 8px 0;
+        .menu-content-title {
+          padding-left: 10%;
+        }
+
+        .menu-content-content {
+          div {
+            margin: 10px 0;
+          }
+          .menu-cate-list, .menu-tag-list {
+            padding: 8px;
+            list-style: none;
+            max-height: 260px;
+            overflow: auto;
+
+            .menu-cate-list-item {
+              background-color: #337ab7;
+            }
+
+            .menu-tag-list-item {
+              background-color: #31b0d5;
+            }
+
+            .menu-cate-list-item, .menu-tag-list-item {
+              display: inline-block;
+              padding: 3px 8px;
+              margin: 0px 3px 3px 0px;
+              border-radius: 5px;
+
+              .menu-cate-list-link, .menu-tag-list-link {
+                color: white;
+              }
+
+              .menu-cate-list-count, .menu-tag-list-count {
+                padding: 1px 5px;
+                background-color: #cccccc;
+                border-radius: 12px;
+                text-align: center;
+                color: white;
+                margin-left: 3px;
+                font-size: 11px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}

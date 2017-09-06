@@ -1,0 +1,15 @@
+.post {
+  .post-title {
+    border-bottom: $border-width double #c3c3c3;
+  }
+  .post-subtitle {
+    margin-bottom: 18px;
+    .item {
+      margin-right: 8px;
+
+      .tags {
+        margin-right: 3px;
+      }
+    }
+  }
+}
