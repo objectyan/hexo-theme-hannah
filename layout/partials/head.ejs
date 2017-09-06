@@ -30,7 +30,10 @@ arrMate.forEach(function(mate, i){
 %>
 <!--end mete-->
 <!--begin keywords-->
-<meta name="keywords" content="<%= list_tags({style:'nolist' ,separator:',',show_count:false}) || title %>"/>
+<%
+list_tags({style:'nolist' ,separator:',',show_count:false})
+%>
+<meta name="keywords" content="<%=  || title %>"/>
 <!--end keywords-->
 <!--begin rss-->
 <% if (theme.rss){ %>
