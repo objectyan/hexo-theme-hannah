@@ -1,7 +1,10 @@
-// Framework grid generation
-//
-// Used only by Bootstrap to generate the correct number of grid classes given
-// any value of `$grid-columns`.
+// Creates a wrapper for a series of columns
+$grid-gutter-width: 30px !default;
+@mixin make-row($gutter: 30px) {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clear-fixed;
+}
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
 @mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
@@ -13,11 +16,10 @@
     // Prevent columns from collapsing when empty
     min-height: 1px;
     // Inner gutter via padding
-    padding-left:  ceil(($grid-gutter-width / 2));
-    padding-right: floor(($grid-gutter-width / 2));
+    padding-left:  ceil((30 / 2));
+    padding-right: floor((30 / 2));
   }
 }
-
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
 @mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
@@ -28,7 +30,6 @@
     float: left;
   }
 }
-
 
 @mixin calc-grid-column($index, $class, $type) {
   @if ($type == width) and ($index > 0) {
@@ -69,7 +70,6 @@
     @include calc-grid-column($i, $class, $type);
   }
 }
-
 
 // Create grid for specific class
 @mixin make-grid($class) {

@@ -2,7 +2,6 @@
 // Typography
 // --------------------------------------------------
 
-
 // Headings
 // -------------------------
 
@@ -158,11 +157,6 @@ ol {
 
 // List options
 
-// [converter] extracted from `.list-unstyled` for libsass compatibility
-@mixin list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
 // [converter] extracted as `@mixin list-unstyled` for libsass compatibility
 .list-unstyled {
   @include list-unstyled;
@@ -204,7 +198,7 @@ dd {
 
 .dl-horizontal {
   dd {
-    @include clearfix; // Clear the floated `dt` if an empty `dd` is present
+    @include clear-fixed; // Clear the floated `dt` if an empty `dd` is present
   }
 
   @media (min-width: $dl-horizontal-breakpoint) {

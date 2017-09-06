@@ -1,43 +1,4 @@
 // https://github.com/chriskempson/tomorrow-theme
-$highlight-background: #2d2d2d;
-$highlight-current-line: #393939;
-$highlight-selection: #515151;
-$highlight-foreground: #cccccc;
-$highlight-comment: #999999;
-$highlight-red: #f2777a;
-$highlight-orange: #f99157;
-$highlight-yellow: #ffcc66;
-$highlight-green: #99cc99;
-$highlight-aqua: #66cccc;
-$highlight-blue: #6699cc;
-$highlight-purple: #cc99cc;
-
-$article-padding: 15px;
-$color-border: #ddd;
-$color-link: #258fb8;
-$color-background: #eee;
-$font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-mono: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-
-$line-height: 22.4px;
-
-@mixin code-block() {
-  background: $highlight-background;
-  border-style: solid;
-  border-color: $color-border;
-  border-width: 0px;
-  overflow: auto;
-  padding: $article-padding;
-  color: $highlight-foreground;
-  line-height: $line-height;
-  margin: $article-padding 0px;
-}
-
-@mixin line-numbers() {
-  color: #666;
-  font-size: 0.85em;
-}
-
 .post {
   pre, code {
     font-family: $font-mono;
@@ -73,7 +34,7 @@ $line-height: 22.4px;
       padding: 0;
     }
     figcaption {
-      @include clearfix;
+      @include clear-fixed;
       font-size: 0.85em;
       color: $highlight-comment;
       line-height: 1em;
