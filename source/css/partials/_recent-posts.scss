@@ -22,8 +22,12 @@
     .item-head, .item-footer {
       .item {
         margin-right: 8px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: #999;
         .tags {
-          margin-right: 1px;
+          margin-right: 2px;
         }
       }
     }

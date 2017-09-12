@@ -39,6 +39,12 @@
         <%
         } %>
     </div>
+    <% if(page.excerpt){ %>
+    <blockquote>
+        <p><strong><em>简介</em></strong><br></p>
+        <%- page.excerpt %>
+    </blockquote>
+    <% } %>
     <%- page.content %>
 </article>
 <%- toc(page.content, {class: 'animated rollIn hannah-toc', list_number: false}) %>
