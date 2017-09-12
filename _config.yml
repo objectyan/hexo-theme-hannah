@@ -25,7 +25,7 @@ rss: /atom.xml
 
 # headImg url and gravatar
 headImg:
-  url: http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787
+  url: /img/logo.jpg
   gravatar:
     email:
     option:
