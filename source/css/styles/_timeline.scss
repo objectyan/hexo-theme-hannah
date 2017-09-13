@@ -1,0 +1,115 @@
+@mixin timeLineClearBoth {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+$base-color: #f1ce8e !default;
+
+$font-begin: "\e90e" !default;
+$font-end: "\e90f" !default;
+
+.time-line {
+  position: relative;
+  width: 100%;
+  * {
+    font-family: 'font-hannah' !important;
+  }
+
+  &:before, &:after {
+    @include timeLineClearBoth;
+  }
+
+  &:before {
+    height: 100%;
+    border-left: 0.5em dotted #cecece;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: " ";
+  }
+
+  .time-line-content {
+    width: 50%;
+    position: relative;
+    //z-index: 1;
+    min-height: 3em;
+
+    &:first-child:before, &:last-child:before {
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      border-radius: 50%;
+      background: white;
+      border: 0.4em solid $base-color;
+      top: -1.2em;
+      right: -1.2em;
+      position: absolute;
+      z-index: 1;
+      font-size: 1.5em;
+    }
+
+    &:first-child:before {
+      content: $font-begin;
+    }
+
+    &:last-child:before {
+      content: $font-end;
+      top: auto;
+      bottom: 0;
+    }
+
+    &:before, &:after {
+      @include timeLineClearBoth;
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 5px;
+      background: $base-color;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      z-index: -1;
+    }
+    &:first-child {
+      padding-top: 66px;
+    }
+    &:first-child:after {
+      top: 66px;
+    }
+
+    &:last-child {
+      padding-bottom: 88px;
+    }
+    &:last-child:after {
+      bottom: 88px;
+    }
+
+    .time-line-content-circle {
+      width: 8em;
+      height: 8em;
+      border-radius: 4em;
+      background: white;
+      border: 8px solid $base-color;
+      position: relative;
+      top: -4em;
+      text-align: center;
+
+      span {
+        font-size: 5em;
+      }
+    }
+
+    .time-line-content-title {
+      position: relative;
+      top: -11em;
+      margin-left: 9em;
+      margin-right: 1em;
+      text-align: center;
+      padding: 0.5em 0.25em;
+    }
+  }
+}

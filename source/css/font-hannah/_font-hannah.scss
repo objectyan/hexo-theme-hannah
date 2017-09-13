@@ -1,0 +1,109 @@
+@import "variables";
+
+@font-face {
+  font-family: 'font-hannah';
+  src:  url('#{$fh-font-path}/font-hannah.eot?n40ti2');
+  src:  url('#{$fh-font-path}/font-hannah.eot?n40ti2#iefix') format('embedded-opentype'),
+  url('#{$fh-font-path}/font-hannah.ttf?n40ti2') format('truetype'),
+  url('#{$fh-font-path}/font-hannah.woff?n40ti2') format('woff'),
+  url('#{$fh-font-path}/font-hannah.svg?n40ti2#font-hannah') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="fh-"], [class*=" fh-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'font-hannah' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fh-month {
+  &:before {
+    content: $fh-month;
+  }
+}
+.fh-year {
+  &:before {
+    content: $fh-year;
+  }
+}
+.fh-begin {
+  &:before {
+    content: $fh-begin;
+  }
+}
+.fh-end {
+  &:before {
+    content: $fh-end;
+  }
+}
+.fh-pig {
+  &:before {
+    content: $fh-pig;
+  }
+}
+.fh-dog {
+  &:before {
+    content: $fh-dog;
+  }
+}
+.fh-chicken {
+  &:before {
+    content: $fh-chicken;
+  }
+}
+.fh-monkey {
+  &:before {
+    content: $fh-monkey;
+  }
+}
+.fh-sheep {
+  &:before {
+    content: $fh-sheep;
+  }
+}
+.fh-horse {
+  &:before {
+    content: $fh-horse;
+  }
+}
+.fh-snake {
+  &:before {
+    content: $fh-snake;
+  }
+}
+.fh-loong {
+  &:before {
+    content: $fh-loong;
+  }
+}
+.fh-rabbit {
+  &:before {
+    content: $fh-rabbit;
+  }
+}
+.fh-tiger {
+  &:before {
+    content: $fh-tiger;
+  }
+}
+.fh-cattle {
+  &:before {
+    content: $fh-cattle;
+  }
+}
+.fh-rat {
+  &:before {
+    content: $fh-rat;
+  }
+}
+

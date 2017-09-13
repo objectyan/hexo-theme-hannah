@@ -1,13 +1,13 @@
 //import mixins
 @import "mixins/mixins";
+//import font-hannah icon
+@import "font-hannah/font-hannah";
 //import styles css
 @import "styles/styles";
 //import partials css
 @import "partials/partials";
 //import font-awesome icon
 @import "font-awesome/font-awesome";
-//import font-zodiac icon
-@import "font-zodiac/font-zodiac";
 
 body {
   overflow-x: hidden;
