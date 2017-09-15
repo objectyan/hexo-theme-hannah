@@ -6,19 +6,19 @@ language: en
 menu:
   Home:
     url: /
-    icon: fa fa-ravelry
+    icon: fh fh-ravelry
   Category:
     url: /categories
-    icon: fa fa-cubes
+    icon: fh fh-cubes
   Tag:
     url: /tags
-    icon: fa fa-tags
+    icon: fh fh-tags
   Archives:
     url: /archives
-    icon: fa fa-archive
+    icon: fh fh-archive
   About:
     url: /about
-    icon: fa fa-id-card-o
+    icon: fh fh-about
 
 # RSS
 rss: /atom.xml

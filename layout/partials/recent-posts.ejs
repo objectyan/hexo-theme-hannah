@@ -10,18 +10,18 @@
             </h3>
             <% if (post.date) { %>
             <time datetime="<%= post.date.toJSON() %>" class="item">
-                <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= date(post.date) %>
+                <i class="fh fh-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= date(post.date) %>
             </time>
             <% } %>
             <% if (post.categories && post.categories.length) {
             %>
             <span class="item">
-                  <i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;
+                  <i class="fh fh-cubes" aria-hidden="true"></i>&nbsp;
                 <%
                 post.categories.forEach(function (cate) {
                 %>
                 <a class="label label-primary tags" href="<%- url_for(cate.path) %>">
-                       <i class="fa fa-cube" aria-hidden="true"></i>&nbsp;<%- cate.name %>
+                       <i class="fh fh-cube" aria-hidden="true"></i>&nbsp;<%- cate.name %>
                     </a>
                 <%
                 })
@@ -39,12 +39,12 @@
             <% if (post.tags && post.tags.length) {
             %>
             <span class="item">
-                    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
+                    <i class="fh fh-tags" aria-hidden="true"></i>&nbsp;
                 <%
                 post.tags.forEach(function (tag) {
                 %>
                 <a class="label label-info tags" href="<%- url_for(tag.path) %>">
-                        <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<%- tag.name %>
+                        <i class="fh fh-tag" aria-hidden="true"></i>&nbsp;<%- tag.name %>
                     </a>
                 <%
                 })

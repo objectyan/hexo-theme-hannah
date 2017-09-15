@@ -1,12 +1,11 @@
-@import "variables";
 
 @font-face {
   font-family: 'font-hannah';
-  src:  url('#{$fh-font-path}/font-hannah.eot?n40ti2');
-  src:  url('#{$fh-font-path}/font-hannah.eot?n40ti2#iefix') format('embedded-opentype'),
-  url('#{$fh-font-path}/font-hannah.ttf?n40ti2') format('truetype'),
-  url('#{$fh-font-path}/font-hannah.woff?n40ti2') format('woff'),
-  url('#{$fh-font-path}/font-hannah.svg?n40ti2#font-hannah') format('svg');
+  src:  url('#{$fh-font-path}/font-hannah.eot?aejozu');
+  src:  url('#{$fh-font-path}/font-hannah.eot?aejozu#iefix') format('embedded-opentype'),
+    url('#{$fh-font-path}/font-hannah.ttf?aejozu') format('truetype'),
+    url('#{$fh-font-path}/font-hannah.woff?aejozu') format('woff'),
+    url('#{$fh-font-path}/font-hannah.svg?aejozu#font-hannah') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,24 +25,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fh-month {
+.fh-calendar {
   &:before {
-    content: $fh-month;
+    content: $fh-calendar;
   }
 }
-.fh-year {
+.fh-about {
   &:before {
-    content: $fh-year;
+    content: $fh-about;
   }
 }
-.fh-begin {
+.fh-archive {
   &:before {
-    content: $fh-begin;
+    content: $fh-archive;
   }
 }
-.fh-end {
+.fh-cube {
   &:before {
-    content: $fh-end;
+    content: $fh-cube;
+  }
+}
+.fh-cubes {
+  &:before {
+    content: $fh-cubes;
+  }
+}
+.fh-menu {
+  &:before {
+    content: $fh-menu;
+  }
+}
+.fh-ravelry {
+  &:before {
+    content: $fh-ravelry;
+  }
+}
+.fh-rss {
+  &:before {
+    content: $fh-rss;
+  }
+}
+.fh-tag {
+  &:before {
+    content: $fh-tag;
+  }
+}
+.fh-tags {
+  &:before {
+    content: $fh-tags;
   }
 }
 .fh-pig {
@@ -104,6 +133,26 @@
 .fh-rat {
   &:before {
     content: $fh-rat;
+  }
+}
+.fh-month {
+  &:before {
+    content: $fh-month;
+  }
+}
+.fh-year {
+  &:before {
+    content: $fh-year;
+  }
+}
+.fh-begin {
+  &:before {
+    content: $fh-begin;
+  }
+}
+.fh-end {
+  &:before {
+    content: $fh-end;
   }
 }
 
