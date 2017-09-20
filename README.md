@@ -28,6 +28,7 @@ theme: hannah
         favicon: [your own preference url]
         ```
 - update head image
+    > update config path for `themes/hannah/_config.yml`
     1. use url or source file
         ``` bash
         # headImg url and gravatar
@@ -42,3 +43,23 @@ theme: hannah
               email: [your gravatar logo config]
               option: [your gravatar logo config]
         ```
+- archive style
+    > update config path for `_config.yml`
+    1. use list
+        ```bash
+        # archive posts
+        archive_generator:
+          per_page: 15
+          yearly: true
+          monthly: false
+          daily: false
+        ```
+    2. use time-line
+       ```bash
+        # archive posts
+        archive_generator:
+          per_page: 0
+          yearly: true
+          monthly: false
+          daily: false
+       ```
