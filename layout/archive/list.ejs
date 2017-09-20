@@ -1,0 +1,18 @@
+<div class="row recent-posts">
+    <% var currentYear;
+    page.posts.each(function(article, pi) {
+    if(currentYear != date(article.date, 'YYYY')){
+        currentYear = date(article.date, 'YYYY'); %>
+    <h2>
+        <% if (is_month()) { %>
+        <%- link_to("archives/" + date(article.date, 'YYYY/MM'), date(article.date, 'MM')) %> /
+        <% } %>
+        <%- link_to("archives/" + date(article.date, 'YYYY'), date(article.date, 'YYYY')) %>
+    </h2>
+    <% } %>
+    <%- partial('../partials/post', {post: article, pi: pi}) %>
+    <% }); %>
+</div>
+<% if(page.next || page.prev){ %>
+<%- partial('../partials/pagination') %>
+<% } %>

@@ -1,0 +1,35 @@
+<div class="time-line">
+    <%
+    var currentYear;
+    var allPosts = [];
+    var zodiacs = ["子鼠", "丑牛", "寅虎", "卯兔", "辰龙", "巳蛇", "午马", "未羊", "申猴", "酉鸡", "戌狗", "亥猪"];
+    page.posts.each(function (article, pi) {
+        allPosts.push(article);
+    });
+    allPosts.forEach(function (article, pi) {
+    if (currentYear != date(article.date, 'YYYY')) {
+        currentYear = date(article.date, 'YYYY');
+    %>
+    <div class="time-line-content">
+        <div class="time-line-content-circle">
+            <span>
+                <i class="fh fh-pig"></i>
+            </span>
+        </div>
+        <div class="time-line-content-title"><%= currentYear %></div>
+        <div class="time-line-content-content">
+            <% } %>
+            <div class="post-item">
+                <time datetime="<%= article.date.toJSON() %>"
+                      class="item"><%= date(article.date, 'MMM DD') %></time>
+                <a href="<%= config.root + article.path %>">
+                    <%= article.title %>
+                </a>
+            </div>
+            <% if (currentYear === date(article.date, 'YYYY') &&
+                    (!allPosts[pi + 1] || date(article.date, 'YYYY') != date(allPosts[pi + 1].date, "YYYY"))) { %>
+        </div>
+    </div>
+    <% } %>
+    <% }); %>
+</div>

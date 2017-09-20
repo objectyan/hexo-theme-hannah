@@ -1,0 +1,54 @@
+<div class="recent-post-item animated <%- pi % 2 === 0 ? "fadeInLeftBig" : "fadeInRightBig" %>">
+    <div class="item-head">
+        <h3 class="title">
+            <a href="<%= config.root + post.path %>">
+                <%= post.title %>
+            </a>
+        </h3>
+        <% if (post.date) { %>
+        <time datetime="<%= post.date.toJSON() %>" class="item">
+            <i class="fh fh-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= date(post.date) %>
+        </time>
+        <% } %>
+        <% if (post.categories && post.categories.length) {
+        %>
+        <span class="item">
+                  <i class="fh fh-cubes" aria-hidden="true"></i>&nbsp;
+            <%
+            post.categories.forEach(function (cate) {
+            %>
+            <a class="label label-primary tags" href="<%- url_for(cate.path) %>">
+                       <i class="fh fh-cube" aria-hidden="true"></i>&nbsp;<%- cate.name %>
+                    </a>
+            <%
+            })
+            %>
+        </span>
+        <%
+        } %>
+    </div>
+    <% if(post.excerpt){ %>
+    <div class="item-content">
+        <%- post.excerpt %>
+    </div>
+    <% } %>
+    <div class="item-footer">
+        <% if (post.tags && post.tags.length) {
+        %>
+        <span class="item">
+                    <i class="fh fh-tags" aria-hidden="true"></i>&nbsp;
+            <%
+            post.tags.forEach(function (tag) {
+            %>
+            <a class="label label-info tags" href="<%- url_for(tag.path) %>">
+                        <i class="fh fh-tag" aria-hidden="true"></i>&nbsp;<%- tag.name %>
+                    </a>
+            <%
+            })
+            %>
+        </span>
+        <%
+        } %>
+        <a class="look" href="<%= config.root + post.path %>">Look >></a>
+    </div>
+</div>

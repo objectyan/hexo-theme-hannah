@@ -7,27 +7,25 @@
 
 $base-color: #f1ce8e !default;
 
-$font-begin: "\e90e" !default;
-$font-end: "\e90f" !default;
+$font-begin: "\e917" !default;
+$font-end: "\e918" !default;
 
 .time-line {
   position: relative;
   width: 100%;
-  * {
-    font-family: 'font-hannah' !important;
-  }
 
   &:before, &:after {
     @include timeLineClearBoth;
   }
 
   &:before {
-    height: 100%;
-    border-left: 0.5em dotted #cecece;
+    content: '';
     position: absolute;
     top: 0;
     left: 50%;
-    content: " ";
+    height: 100%;
+    width: 4px;
+    background: $base-color;
   }
 
   .time-line-content {
@@ -35,34 +33,6 @@ $font-end: "\e90f" !default;
     position: relative;
     //z-index: 1;
     min-height: 3em;
-
-    &:first-child:before, &:last-child:before {
-      width: 2em;
-      height: 2em;
-      text-align: center;
-      border-radius: 50%;
-      background: white;
-      border: 0.4em solid $base-color;
-      top: -1.2em;
-      right: -1.2em;
-      position: absolute;
-      z-index: 1;
-      font-size: 1.5em;
-    }
-
-    &:first-child:before {
-      content: $font-begin;
-    }
-
-    &:last-child:before {
-      content: $font-end;
-      top: auto;
-      bottom: 0;
-    }
-
-    &:before, &:after {
-      @include timeLineClearBoth;
-    }
 
     &:after {
       content: "";
@@ -76,6 +46,10 @@ $font-end: "\e90f" !default;
     }
     &:first-child {
       padding-top: 66px;
+
+      .time-line-content-content {
+        top: 5em;
+      }
     }
     &:first-child:after {
       top: 66px;
@@ -105,11 +79,70 @@ $font-end: "\e90f" !default;
 
     .time-line-content-title {
       position: relative;
-      top: -11em;
+      top: -6em;
       margin-left: 9em;
       margin-right: 1em;
       text-align: center;
       padding: 0.5em 0.25em;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .time-line-content-content {
+      position: relative;
+      width: 100%;
+      top: -1em;
+      padding-left: 8.3em;
+    }
+
+    &:nth-child(odd) {
+      .time-line-content-title {
+        width: 125%;
+        margin-left: unset;
+        margin-right: unset;;
+      }
+
+      .time-line-content-content {
+        top: -9em;
+      }
+    }
+
+    &:nth-child(even) {
+      margin-left: 50%;
+      .time-line-content-circle {
+        right: 0px;
+        position: absolute;
+      }
+
+      .time-line-content-title {
+        top: -2em;
+        width: 70%;
+        margin-left: 1em;
+        margin-right: 9em;
+      }
+
+      .time-line-content-content {
+        padding-right: 8.3em;
+        padding-left: 1em;
+      }
     }
   }
+
+  .time-line-content {
+    .post-item {
+      padding: 5px 3px;
+      &:first-child {
+        padding-top: 0px;
+      }
+
+      time {
+        border-radius: 5px;
+        background-color: $base-color;
+        padding: 1px 2px;
+        color: #fff;
+        margin-right: 8px;
+      }
+    }
+  }
+
 }
