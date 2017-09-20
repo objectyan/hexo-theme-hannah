@@ -10,9 +10,9 @@
         <%- link_to("archives/" + date(article.date, 'YYYY'), date(article.date, 'YYYY')) %>
     </h2>
     <% } %>
-    <%- partial('../partials/post', {post: article, pi: pi}) %>
+    <%- partial('../post', {post: article, pi: pi}) %>
     <% }); %>
 </div>
 <% if(page.next || page.prev){ %>
-<%- partial('../partials/pagination') %>
+<%- partial('../pagination') %>
 <% } %>

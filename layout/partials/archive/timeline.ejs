@@ -2,7 +2,7 @@
     <%
     var currentYear;
     var allPosts = [];
-    var zodiacs = ["子鼠", "丑牛", "寅虎", "卯兔", "辰龙", "巳蛇", "午马", "未羊", "申猴", "酉鸡", "戌狗", "亥猪"];
+    var zodiacs = ["rat", "cattle", "tiger", "rabbit", "loong", "snake", "horse", "sheep", "monkey", "chicken", "dog", "pig"];
     page.posts.each(function (article, pi) {
         allPosts.push(article);
     });
@@ -13,7 +13,7 @@
     <div class="time-line-content">
         <div class="time-line-content-circle">
             <span>
-                <i class="fh fh-pig"></i>
+                <i class="fh fh-<%= zodiacs[(parseInt(currentYear) - 2008) % 12] %>"></i>
             </span>
         </div>
         <div class="time-line-content-title"><%= currentYear %></div>
