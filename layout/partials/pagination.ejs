@@ -1,6 +1,6 @@
-<div class="row animated bounceInDown">
+<div class="row animated bounceInDown paginations">
     <div class="col-md-8 col-md-push-2 col-xs-12">
-        <nav class="row paginations">
+        <nav class="row">
             <% if (page.prev_link) { %>
             <a href="<%= url_for(page.prev_link) %>" class="prev col-md-2 col-xs-4 text-left">&larr; Prev</a>
             <% } else if (page.prev) { %>
@@ -17,5 +17,17 @@
             <a href="<%= url_for(page.next.path) %>" class="next col-md-2 col-xs-4 text-right">Next &rarr;</a>
             <% } %>
         </nav>
+        <div class="row">
+            <div class="col-md-6 col-xs-6 text-left">
+                <% if (page.prev && page.prev.title) { %>
+                <%- page.prev.title %>
+                <% } %>
+            </div>
+            <div class="col-md-6 col-xs-6 text-right">
+                <% if (page.next && page.next.title) { %>
+                <%- page.next.title %>
+                <% } %>
+            </div>
+        </div>
     </div>
 </div>

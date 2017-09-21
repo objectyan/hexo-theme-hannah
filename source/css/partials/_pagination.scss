@@ -1,10 +1,11 @@
 .paginations {
-
+  * {
+    color: #c0c0c0;
+  }
   .prev, .next {
     border: 1px solid #ddd;
     border-radius: 15px;
     text-align: center;
     padding: 5px;
-    color: #c0c0c0;
   }
 }
