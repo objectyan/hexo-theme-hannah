@@ -6,6 +6,7 @@
         } else {
             delete footer.style.bottom;
         }
+        footer.classList.remove("hide");
     }
 
     win.onload = function () {
