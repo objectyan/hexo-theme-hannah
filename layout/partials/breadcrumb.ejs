@@ -1,5 +1,5 @@
-<div class="row animated rubberBand">
-    <ul class="bread-crumb">
+<div class="row bread-crumb">
+    <ul class="bread-crumb-menu animated rubberBand">
         <li><a href="<%- url_for('/') %>"><i class="fh fh-ravelry" aria-hidden="true"></i> Home</a></li>
         <% if(!is_home()){
         if(is_category()){ %>
@@ -12,7 +12,8 @@
         if (page.categories && page.categories.length)
         page.categories.forEach(function (cate) {
         %>
-        <li><a href="<%- url_for(cate.path) %>"><i class="fh fh-cube" aria-hidden="true"></i> <%- cate.name %></a></li>
+        <li><a href="<%- url_for(cate.path) %>"><i class="fh fh-cube" aria-hidden="true"></i> <%- cate.name %></a>
+        </li>
         <%
         });
         }
@@ -47,4 +48,7 @@
         <% }
         } %>
     </ul>
+    <div class="bread-crumb-search">
+        <%- partial('search') %>
+    </div>
 </div>

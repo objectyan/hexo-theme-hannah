@@ -1,0 +1,10 @@
+{
+  "name": "hexo-theme-hannah",
+  "version": "1.1.1",
+  "private": true,
+  "dependencies": {
+    "hexo-renderer-ejs": "*",
+    "hexo-renderer-sass": "*",
+    "hexo-renderer-marked": "*"
+  }
+}

@@ -25,6 +25,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fh-search {
+  &:before {
+    content: $fh-search;
+  }
+}
 .fh-calendar {
   &:before {
     content: $fh-calendar;
@@ -155,4 +160,6 @@
     content: $fh-end;
   }
 }
+
+
 

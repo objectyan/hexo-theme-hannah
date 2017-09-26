@@ -1,18 +1,28 @@
 .bread-crumb {
-  padding: 8px 15px 4px;
-  margin-top: 8px;
-  list-style: none;
-  border-radius: 35px;
-  border-bottom: .25em dotted #ccc;
-  background-color: #f1ce8e;
+  .bread-crumb-menu {
+    padding: 8px 15px 4px;
+    margin-top: 8px;
+    list-style: none;
+    border-radius: 35px;
+    border-bottom: .25em dotted #ccc;
+    background-color: #f1ce8e;
 
-  li {
-    display: inline-block;
+    li {
+      display: inline-block;
+    }
+
+    li + li:before {
+      padding: 0 5px;
+      color: #ccc;
+      content: "\003e";
+    }
   }
 
-  li + li:before {
-    padding: 0 5px;
-    color: #ccc;
-    content: "\003e";
+  .bread-crumb-search {
+    position: absolute;
+    right: 7.5px;
+    top: 16px;
+    font-size: 16px;
   }
+
 }
