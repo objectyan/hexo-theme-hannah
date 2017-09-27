@@ -19,7 +19,8 @@
     border: 1px dotted #cecece;
     border-radius: 8px;
     position: absolute;
-    width: 100%;
+    width: 130%;
+    right: 0;
     background-color: #f9f9f9;
     z-index: 100;
     overflow-y: auto;
@@ -27,6 +28,12 @@
     [class^="search-result-item"] {
       display: block;
       margin: 3px;
+      color: #5f5f5f !important;
+      border-bottom: 1px dotted #cecece;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
     }
   }
 

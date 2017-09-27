@@ -1,6 +1,7 @@
 <div class="search">
     <i class="fh fh-search icon-search"></i>
-    <input placeholder="Search ..." class="input-search"/>
+    <input placeholder="Search ..." onkeyup="searchFunc(this,event,'<%- url_for('search.xml') %>')"
+           class="input-search"/>
     <div class="search-result">
         <%- list_posts({
             amount: 15, style: "nolist", separator: "", class: "search-result-item"
