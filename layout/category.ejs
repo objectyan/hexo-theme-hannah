@@ -1,7 +1,9 @@
-
 <div id="category">
-  <h2><i class="fh fh-cubes" aria-hidden="true"></i>&nbsp;<%=page.category%></h2>
-  <%-partial('partials/recent-posts')%>
+    <h2><i class="fh fh-cubes" aria-hidden="true"></i>&nbsp;<%= page.category %></h2>
+    <% if(config.archive_generator && config.archive_generator.per_page === 0){ %>
+    <%- partial('partials/archive/timeline') %>
+    <% }else{ %>
+    <%- partial('partials/archive/list') %>
+    <% } %>
 </div>
 
-<%-partial('partials/pagination')%>

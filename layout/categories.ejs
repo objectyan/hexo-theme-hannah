@@ -1,6 +1,13 @@
-<% var categoriesList = list_categories({show_count: false});
+<h2><i class="fh fh-cubes" aria-hidden="true"></i>&nbsp;Categories</h2>
+<% var categoriesList = list_categories({
+    style: "nolist", separator: "", class: "archive-tag-cate", transform: function (item) {
+        return "<i class='fh fh-cube'></i>&nbsp;" + item;
+    }
+});
 if (categoriesList) { %>
-<%- categoriesList %>
+<div class="archive-tag-cate cate">
+    <%- categoriesList %>
+</div>
 <% } else { %>
 <p>None.</p>
 <% } %>

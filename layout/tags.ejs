@@ -1,6 +1,13 @@
-<% var tagsList = list_tags({ show_count: false });
+<h2><i class="fh fh-tags" aria-hidden="true"></i>&nbsp;Tags</h2>
+<% var tagsList = list_tags({
+    style: "nolist", separator: "", class: "archive-tag-cate", transform: function (item) {
+        return "<i class='fh fh-tag'></i>&nbsp;" + item;
+    }
+});
 if (tagsList) { %>
-<%- tagsList %>
+<div class="archive-tag-cate tag">
+    <%- tagsList %>
+</div>
 <% } else { %>
 <p>None.</p>
 <% } %>

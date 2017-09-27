@@ -1,6 +1,8 @@
 <div id="tag">
     <h2><i class="fh fh-tags" aria-hidden="true"></i>&nbsp;<%= page.tag %></h2>
-    <%- partial('partials/recent-posts') %>
+    <% if(config.archive_generator && config.archive_generator.per_page === 0){ %>
+    <%- partial('partials/archive/timeline') %>
+    <% }else{ %>
+    <%- partial('partials/archive/list') %>
+    <% } %>
 </div>
-
-<%- partial('partials/pagination') %>
