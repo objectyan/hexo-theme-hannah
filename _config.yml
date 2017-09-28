@@ -44,8 +44,18 @@ scripts:
 # highlight code item
 highlight_theme: normal
 
+# post search
+search:
+  path: search.xml
+  field: post
+
+# site map
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+
 # Baidu Analytics
-baidu_analytics: 8fb2a05be303b36faebf141d7317de43
+baidu_analytics:
 # Google Analytics
 google_analytics:
 

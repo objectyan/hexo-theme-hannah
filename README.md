@@ -63,3 +63,29 @@ theme: hannah
           monthly: false
           daily: false
        ```
+- update Analytics
+    > update config path for `themes/hannah/_config.yml`
+    1. use baidu
+        ``` bash
+        # Baidu Analytics
+        baidu_analytics: [your app secret]
+        ```
+    2. use google
+        ``` bash
+        # Google Analytics
+        google_analytics: [your app secret]
+        ```
+- update Comments
+    > update config path for `themes/hannah/_config.yml`
+    1. use Disqus
+        ``` bash
+        # Disqus Comments
+        disqus_shortname: [your app secret]
+        ```
+    2. use Changyan
+        ``` bash
+        # Changyan Comments
+        changyan_comments:
+          appid: [your app id]
+          appsecret: [your app secret]
+        ```
