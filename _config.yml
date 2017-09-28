@@ -19,6 +19,16 @@ menu:
   About:
     url: /about
     icon: fh fh-about
+  Doc:
+    url: /doc
+    icon: fh fh-document
+  Plug:
+    url: /plug
+    icon: fh fh-plug
+  SiteMap:
+    url: /sitemap
+    icon: fh fh-sitemap
+
 
 # RSS
 rss: /atom.xml

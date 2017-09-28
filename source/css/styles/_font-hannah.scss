@@ -26,6 +26,24 @@
 
 .fh {
 
+  &.fh-document {
+    &:before {
+      content: $fh-document;
+    }
+  }
+
+  &.fh-plug {
+    &:before {
+      content: $fh-plug;
+    }
+  }
+
+  &.fh-sitemap {
+    &:before {
+      content: $fh-sitemap;
+    }
+  }
+
   &.fh-github {
     &:before {
       content: $fh-github;
