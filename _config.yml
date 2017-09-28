@@ -23,6 +23,13 @@ menu:
 # RSS
 rss: /atom.xml
 
+# Social
+social:
+  github:
+    url: https://github.com/objectyan
+    icon: fh fh-github
+    title: GitHub
+
 # headImg url and gravatar
 headImg:
   url: /img/logo.jpg

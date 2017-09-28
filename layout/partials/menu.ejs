@@ -1,20 +1,91 @@
 <div class="hannah-menu">
     <i class="fh fh-ravelry fa-2x btn fixed-menu animated bounce" id="btn_menu" aria-hidden="true"></i>
     <div class="menu-outer container-fluid hide animated" id="div_menu">
-        <!--begin handImg-->
-        <h3 class="text-center">
+        <div class="row" style="margin-bottom: 5px;">
             <%
-            if(theme.headImg && theme.headImg.url){
+            let leftSocial = [], rightSocial = [];
+            let allSocial = [];
+            if (theme.social) {
+
+                Object.keys(theme.social).forEach(function (key, idx) {
+                    let item = theme.social[key];
+                    if (item)
+                        allSocial.push({
+                            title: item["title"] || key,
+                            url: item["url"] || "#",
+                            icon: item["icon"] || "fh fh-ravelry"
+                        });
+                });
+                if (allSocial.length % 2 === 0) {
+                    leftSocial = allSocial.slice(0, allSocial.length / 2);
+                    rightSocial = allSocial.slice(allSocial.length / 2, allSocial.length);
+                } else {
+                    leftSocial = allSocial.slice(0, allSocial.length / 2 < 1 ? Math.ceil(allSocial.length / 2) : Math.floor(allSocial.length / 2));
+                    rightSocial = allSocial.slice(allSocial.length / 2 < 1 ? Math.ceil(allSocial.length / 2) : Math.floor(allSocial.length / 2), allSocial.length);
+                }
+            }
             %>
-            <img src="<%= theme.headImg.url %>" alt="Head Image" class="img-circle">
-            <% }else if(theme.headImg && theme.headImg.gravatar
-                    && theme.headImg.gravatar.email){
-                var option = theme.headImg.gravatar.option || {};
-            %>
-            <%- gravatar(theme.headImg.gravatar.email, option) %>
-            <% } %>
-        </h3>
-        <!--end handImg-->
+            <div class="col-md-offset-2 col-md-3 col-xs-4 text-center left-social">
+                <% leftSocial.forEach(function (t) { %>
+                <a target="_blank" href="<%- t.url %>" title="<%- t.title %>"><i class="<%- t.icon %>"></i></a>
+                <% }) %>
+                <style>
+                    .left-social {
+                        height: 132px;
+                        line-height: <%-leftSocial.length>4?66:132%>px;
+                        font-size: <%-leftSocial.length>4?55:66%>px;
+                    }
+
+                    .left-social * {
+                        color: #f1ce8e;
+                    }
+
+                    @media (max-width: 767px) {
+                        .left-social {
+                            line-height: <%-leftSocial.length>4?66:132%>px;
+                            font-size: 33px;
+                        }
+                    }
+                </style>
+            </div>
+            <!--begin handImg-->
+            <div class="col-md-2 col-xs-4 text-center">
+                <%
+                if(theme.headImg && theme.headImg.url){
+                %>
+                <img src="<%= theme.headImg.url %>" alt="Head Image" class="img-circle">
+                <% }else if(theme.headImg && theme.headImg.gravatar
+                        && theme.headImg.gravatar.email){
+                    var option = theme.headImg.gravatar.option || {};
+                %>
+                <%- gravatar(theme.headImg.gravatar.email, option) %>
+                <% } %>
+            </div>
+            <!--end handImg-->
+            <div class="col-md-3 col-xs-4 text-center right-social">
+                <% rightSocial.forEach(function (t) { %>
+                <a target="_blank" href="<%- t.url %>" title="<%- t.title %>"><i class="<%- t.icon %>"></i></a>
+                <% }) %>
+                <style>
+                    .right-social {
+                        height: 132px;
+                        line-height: <%-rightSocial.length>4?66:132%>px;
+                        font-size: <%-rightSocial.length>4?55:66%>px;
+                    }
+
+                    @media (max-width: 767px) {
+                        .right-social {
+                            line-height: <%-rightSocial.length>4?66:132%>px;
+                            font-size: 33px;
+                        }
+                    }
+
+                    .right-social * {
+                        color: #f1ce8e;
+                    }
+                </style>
+            </div>
+        </div>
         <div class="row">
             <div class="menu-content col-md-8 col-md-push-2 col-xs-12 ">
                 <dl class="menu-content-item">
@@ -37,7 +108,7 @@
                         </div>
                         <% }); %>
                         <div class="col-md-4 col-xs-6 col-sm-4 text-center animated tada">
-                            <a href="<%=theme.rss%>" class="btn btn-block">
+                            <a href="<%= theme.rss %>" class="btn btn-block">
                                 <i class="fh fh-rss" aria-hidden="true"></i> RSS
                             </a>
                         </div>
