@@ -45,9 +45,13 @@ scripts:
 highlight_theme: normal
 
 # Baidu Analytics
-baidu_analytics:
+baidu_analytics: 8fb2a05be303b36faebf141d7317de43
 # Google Analytics
 google_analytics:
 
 # Disqus Comments
 disqus_shortname:
+# Changyan Comments
+changyan_comments:
+  appid:
+  appsecret:

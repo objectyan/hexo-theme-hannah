@@ -11,6 +11,10 @@
             <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
     </div>
+    <% } else if (theme.changyan_comments && theme.changyan_comments.appid && theme.changyan_comments.appsecret){ %>
+
+    <%- partial('./changyan-comments') %>
     <% } %>
+
 </div>
 <% } %>
