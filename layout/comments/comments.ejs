@@ -1,0 +1,16 @@
+<% if (page.comments && !is_home()){ %>
+<div class="comments" id="comments">
+    <% if (theme.disqus_shortname){ %>
+    <%- partial('./disqus-comments') %>
+    <div style="text-align:center;">
+        <button class="btn" id="load-disqus" onclick="disqus.load();">Load Disqus Comments</button>
+    </div>
+    <div id="disqus_thread">
+        <noscript>
+            Please enable JavaScript to view the
+            <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+    <% } %>
+</div>
+<% } %>

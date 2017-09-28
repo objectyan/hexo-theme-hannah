@@ -28,6 +28,9 @@ pageTitle += ' [ ' + config.title + ' ]';
         <%- partial('partials/breadcrumb') %>
         <!--end breadcrumb-->
         <%- body %>
+        <!--begin comments-->
+        <%- partial('./comments/comments') %>
+        <!--end comments-->
     </div>
 </div>
 
@@ -41,7 +44,9 @@ pageTitle += ' [ ' + config.title + ' ]';
 <script src="<%= url %>"></script>
 <% }); %>
 <% } %>
-
+<!--begin analytics-->
+<%- partial('./analytics/analytics') %>
+<!--end analytics-->
 </body>
 <!--end body-->
 </html>
