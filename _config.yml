@@ -72,7 +72,7 @@ sitemap:
   template: ./sitemap_template.xml
 
 # Baidu Analytics
-baidu_analytics:
+baidu_analytics: 8fb2a05be303b36faebf141d7317de43
 # Google Analytics
 google_analytics:
 
