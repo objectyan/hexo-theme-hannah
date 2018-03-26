@@ -4,8 +4,24 @@
 @import "styles/styles";
 //import partials css
 @import "partials/partials";
-
 body {
   overflow-x: hidden;
   background-color: #f9f9f9;
+}
+
+* {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 1px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #EDEDED;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #535353;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  }
 }
