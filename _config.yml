@@ -57,6 +57,7 @@ stylesheets:
 # scripts loaded in the end of the body
 scripts:
 - /js/hannah.js
+- /js/canvas-nest.js
 
 # highlight code item
 highlight_theme: normal

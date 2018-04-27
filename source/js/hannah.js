@@ -41,7 +41,7 @@
             if (i === 0)
                 ele.nextElementSibling.innerHTML = "";
             var ele_a = document.createElement("a");
-            ele_a.url = t.url;
+            ele_a.setAttribute("url",t.url);
             ele_a.innerHTML = t.title;
             ele_a.classList.add("search-result-item");
             ele_a.classList.add("animated", "tada", "col-lg-12");
