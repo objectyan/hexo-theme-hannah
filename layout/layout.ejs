@@ -11,42 +11,61 @@ pageTitle += ' [ ' + config.title + ' ]';
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
 <!--begin head-->
+
 <head>
     <%- partial('./partials/head') %>
 </head>
 <!--end head-->
 <!--begin body-->
+
 <body class="container-fluid">
 
-<!--begin menu-->
-<%- partial('partials/menu') %>
-<!--end menu-->
+    <!--begin menu-->
+    <%- partial('partials/menu') %>
+    <!--end menu-->
 
-<div class="row hannah-body">
-    <div class="col-md-8 col-md-push-2 col-xs-12">
-        <!--begin breadcrumb-->
-        <%- partial('partials/breadcrumb') %>
-        <!--end breadcrumb-->
-        <%- body %>
-        <!--begin comments-->
-        <%- partial('./comments/comments') %>
-        <!--end comments-->
+    <div class="row hannah-body">
+        <div class="col-md-8 col-md-push-2 col-xs-12">
+            <!--begin breadcrumb-->
+            <%- partial('partials/breadcrumb') %>
+            <!--end breadcrumb-->
+            <!--begin body-->
+            <%- body %>
+            <!--end body-->
+            <!--begin comments-->
+            <%- partial('./comments/comments') %>
+            <!--end comments-->
+        </div>
     </div>
-</div>
 
-<!--begin footer-->
-<%- partial('./partials/footer') %>
-<!--end footer-->
+    <!--begin footer-->
+    <%- partial('./partials/footer') %>
+    <!--end footer-->
 
-<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
-<!-- scripts list from theme config.yml -->
-<% theme.scripts.forEach(function(url) { %>
-<script src="<%= url %>"></script>
-<% }); %>
-<% } %>
-<!--begin analytics-->
-<%- partial('./analytics/analytics') %>
-<!--end analytics-->
+    <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+    <!-- scripts list from theme config.yml -->
+    <% theme.scripts.forEach(function(url) { %>
+    <script src="<%= url %>"></script>
+    <% }); %>
+    <% } %>
+    <!--begin analytics-->
+    <%- partial('./analytics/analytics') %>
+    <!--end analytics-->
 </body>
 <!--end body-->
+<!--begin canvas-nest-->
+<script>
+    var nesturl = "https://unpkg.com/canvas-nest.js/dist/canvas-nest.js";
+    var c = document.getElementsByTagName("body")[0] || document.body || document.documentElement;
+    var b = document.createElement("script");
+    b.setAttribute("type", "text/javascript");
+    b.setAttribute("src", nesturl);
+    b.setAttribute("color",
+        `${ Math.floor(Math.random()*256)},${ Math.floor(Math.random()*256)},${ Math.floor(Math.random()*256)}`);
+    b.setAttribute("opacity", Math.random());
+    b.setAttribute("count", parseInt((Math.random() * 500) || 99));
+    c.appendChild(b)
+</script>
+<!--end canvas-nest-->
+
 </html>

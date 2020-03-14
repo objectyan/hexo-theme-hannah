@@ -111,4 +111,5 @@
     }
 
     win.searchFunc = search;
+
 })(window);

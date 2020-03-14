@@ -6,7 +6,8 @@
             <% } else if (page.prev) { %>
             <a href="<%= url_for(page.prev.path) %>" class="prev col-md-2 col-xs-4 text-left">&larr; Prev</a>
             <% } %>
-            <span class="page-content col-md-8 <%= (!page.prev_link && !page.prev) ? "col-md-offset-2 col-xs-offset-4" : "" %> col-xs-4 text-center">
+            <span
+                class="page-content col-md-8 <%= (!page.prev_link && !page.prev) ? "col-md-offset-2 col-xs-offset-4" : "" %> col-xs-4 text-center">
                 <% if (typeof page.current === 'number' && typeof page.total === 'number') { %>
                 Page <%= page.current %> of <%= page.total %>
                 <% } %>

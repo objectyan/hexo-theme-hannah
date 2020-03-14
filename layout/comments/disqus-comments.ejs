@@ -35,4 +35,13 @@
 <script type='text/javascript'
         src='//<%- theme.disqus_shortname %>.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=1&avatar_size=32&excerpt_length=20&hide_mods=1'
 ></script>
+<div style="text-align:center;">
+    <button class="btn" id="load-disqus" onclick="disqus.load();">Load Disqus Comments</button>
+</div>
+<div id="disqus_thread">
+    <noscript>
+        Please enable JavaScript to view the
+        <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+</div>
 <% } %>

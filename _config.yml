@@ -57,7 +57,6 @@ stylesheets:
 # scripts loaded in the end of the body
 scripts:
 - /js/hannah.js
-- /js/canvas-nest.js
 
 # highlight code item
 highlight_theme: normal
@@ -83,3 +82,10 @@ disqus_shortname:
 changyan_comments:
   appid:
   appsecret:
+# Gittalk Comments
+gittalk_comments:
+  clientID: e82b50d554e32a851ae7
+  clientSecret: 95923aeaddb44e6de22d088703c6bbde978f505c
+  repo: objectyan.github.io
+  owner: objectyan
+  admin: objectyan
