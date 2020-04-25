@@ -1,3 +1,5 @@
+<% if(theme.gittalk_comments && theme.gittalk_comments.clientID && theme.gittalk_comments.clientSecrete
+&& theme.gittalk_comments.repo && theme.gittalk_comments.owner && theme.gittalk_comments.admin){ %>
 <div id="gitalk-container">
 </div>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -37,5 +39,4 @@
         gitalk.render('gitalk-container')
     });
 </script>
-
-</div>
+<% } %>
