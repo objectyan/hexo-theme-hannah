@@ -7,3 +7,4 @@ public/
 .deploy*/
 themes/
 .idea/
+package-lock.json

@@ -58,9 +58,6 @@ stylesheets:
 scripts:
 - /js/hannah.js
 
-# highlight code item
-highlight_theme: normal
-
 # post search
 search:
   path: search.xml
@@ -89,3 +86,9 @@ gittalk_comments:
   repo: objectyan.github.io
   owner: objectyan
   admin: objectyan
+
+# auto nofollow
+nofollow:
+  enable: true
+  exclude:
+    - objectyan.me
