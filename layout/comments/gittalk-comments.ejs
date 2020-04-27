@@ -1,4 +1,4 @@
-<% if(theme.gittalk_comments && theme.gittalk_comments.clientID && theme.gittalk_comments.clientSecrete
+<% if(theme.gittalk_comments && theme.gittalk_comments.clientID && theme.gittalk_comments.clientSecret
 && theme.gittalk_comments.repo && theme.gittalk_comments.owner && theme.gittalk_comments.admin){ %>
 <div id="gitalk-container">
 </div>
@@ -28,7 +28,7 @@
     loadJs("https://unpkg.com/gitalk/dist/gitalk.min.js", function () {
         var gitalk = new Gitalk({
             clientID: '<%- theme.gittalk_comments.clientID %>',
-            clientSecret: '<%- theme.gittalk_comments.clientSecrete %>',
+            clientSecret: '<%- theme.gittalk_comments.clientSecret %>',
             repo: '<%- theme.gittalk_comments.repo %>',
             owner: '<%- theme.gittalk_comments.owner %>',
             admin: ['<%- theme.gittalk_comments.admin %>'],
