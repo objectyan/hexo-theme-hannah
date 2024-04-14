@@ -1,5 +1,5 @@
 # hexo-theme-hannah
-- [Preview](http://objectyan.me)
+- [Preview](https://objectyan.github.io)
 
 ## Installation
 
