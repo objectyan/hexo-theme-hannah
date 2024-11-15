@@ -1,3 +1,5 @@
+@use "../mixins/variables";
+
 .hannah-toc {
   list-style: none;
   position: fixed;
@@ -29,7 +31,7 @@
   }
 }
 
-@media (max-width: $xs-max-width) {
+@media (max-width: variables.$xs-max-width) {
   .hannah-toc {
     display: none;
   }

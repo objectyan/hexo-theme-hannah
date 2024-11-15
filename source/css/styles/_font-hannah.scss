@@ -1,10 +1,12 @@
+@use "../mixins/variables";
+
 @font-face {
   font-family: 'font-hannah';
-  src: url('#{$fh-font-path}/font-hannah.eot?aejozu');
-  src: url('#{$fh-font-path}/font-hannah.eot?aejozu#iefix') format('embedded-opentype'),
-  url('#{$fh-font-path}/font-hannah.ttf?aejozu') format('truetype'),
-  url('#{$fh-font-path}/font-hannah.woff?aejozu') format('woff'),
-  url('#{$fh-font-path}/font-hannah.svg?aejozu#font-hannah') format('svg');
+  src: url('#{variables.$fh-font-path}/font-hannah.eot?aejozu');
+  src: url('#{variables.$fh-font-path}/font-hannah.eot?aejozu#iefix') format('embedded-opentype'),
+  url('#{variables.$fh-font-path}/font-hannah.ttf?aejozu') format('truetype'),
+  url('#{variables.$fh-font-path}/font-hannah.woff?aejozu') format('woff'),
+  url('#{variables.$fh-font-path}/font-hannah.svg?aejozu#font-hannah') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -28,187 +30,193 @@
 
   &.fh-document {
     &:before {
-      content: $fh-document;
+      content: variables.$fh-document;
     }
   }
 
   &.fh-plug {
     &:before {
-      content: $fh-plug;
+      content: variables.$fh-plug;
     }
   }
 
   &.fh-sitemap {
     &:before {
-      content: $fh-sitemap;
+      content: variables.$fh-sitemap;
     }
   }
 
   &.fh-github {
     &:before {
-      content: $fh-github;
+      content: variables.$fh-github;
+    }
+  }
+
+  &.fh-gitee {
+    &:before {
+      content: variables.$fh-gitee;
     }
   }
 
   &.fh-search {
     &:before {
-      content: $fh-search;
+      content: variables.$fh-search;
     }
   }
 
   &.fh-calendar {
     &:before {
-      content: $fh-calendar;
+      content: variables.$fh-calendar;
     }
   }
 
   &.fh-about {
     &:before {
-      content: $fh-about;
+      content: variables.$fh-about;
     }
   }
 
   &.fh-archive {
     &:before {
-      content: $fh-archive;
+      content: variables.$fh-archive;
     }
   }
 
   &.fh-cube {
     &:before {
-      content: $fh-cube;
+      content: variables.$fh-cube;
     }
   }
 
   &.fh-cubes {
     &:before {
-      content: $fh-cubes;
+      content: variables.$fh-cubes;
     }
   }
 
   &.fh-menu {
     &:before {
-      content: $fh-menu;
+      content: variables.$fh-menu;
     }
   }
 
   &.fh-ravelry {
     &:before {
-      content: $fh-ravelry;
+      content: variables.$fh-ravelry;
     }
   }
 
   &.fh-rss {
     &:before {
-      content: $fh-rss;
+      content: variables.$fh-rss;
     }
   }
 
   &.fh-tag {
     &:before {
-      content: $fh-tag;
+      content: variables.$fh-tag;
     }
   }
 
   &.fh-tags {
     &:before {
-      content: $fh-tags;
+      content: variables.$fh-tags;
     }
   }
 
   &.fh-pig {
     &:before {
-      content: $fh-pig;
+      content: variables.$fh-pig;
     }
   }
 
   &.fh-dog {
     &:before {
-      content: $fh-dog;
+      content: variables.$fh-dog;
     }
   }
 
   &.fh-chicken {
     &:before {
-      content: $fh-chicken;
+      content: variables.$fh-chicken;
     }
   }
 
   &.fh-monkey {
     &:before {
-      content: $fh-monkey;
+      content: variables.$fh-monkey;
     }
   }
 
   &.fh-sheep {
     &:before {
-      content: $fh-sheep;
+      content: variables.$fh-sheep;
     }
   }
 
   &.fh-horse {
     &:before {
-      content: $fh-horse;
+      content: variables.$fh-horse;
     }
   }
 
   &.fh-snake {
     &:before {
-      content: $fh-snake;
+      content: variables.$fh-snake;
     }
   }
 
   &.fh-loong {
     &:before {
-      content: $fh-loong;
+      content: variables.$fh-loong;
     }
   }
 
   &.fh-rabbit {
     &:before {
-      content: $fh-rabbit;
+      content: variables.$fh-rabbit;
     }
   }
 
   &.fh-tiger {
     &:before {
-      content: $fh-tiger;
+      content: variables.$fh-tiger;
     }
   }
 
   &.fh-cattle {
     &:before {
-      content: $fh-cattle;
+      content: variables.$fh-cattle;
     }
   }
 
   &.fh-rat {
     &:before {
-      content: $fh-rat;
+      content: variables.$fh-rat;
     }
   }
 
   &.fh-month {
     &:before {
-      content: $fh-month;
+      content: variables.$fh-month;
     }
   }
 
   &.fh-year {
     &:before {
-      content: $fh-year;
+      content: variables.$fh-year;
     }
   }
 
   &.fh-begin {
     &:before {
-      content: $fh-begin;
+      content: variables.$fh-begin;
     }
   }
 
   &.fh-end {
     &:before {
-      content: $fh-end;
+      content: variables.$fh-end;
     }
   }
 }

@@ -1,11 +1,11 @@
 //import mixins
-@import "mixins/mixins";
+@use "mixins/mixins";
 //import styles css
-@import "styles/styles";
+@use "styles/styles";
 //import partials css
-@import "partials/partials";
+@use "partials/partials";
 //import comments css
-@import "comments/comments";
+@use "comments/comments";
 body {
   overflow-x: hidden;
   background-color: #f9f9f9;

@@ -1,3 +1,6 @@
+@use "../mixins/function";
+@use "../mixins/variables";
+
 //
 // Basic Bootstrap table
 //
@@ -5,27 +8,27 @@
 table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: $spacer;
-  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  margin-bottom: variables.$spacer;
+  background-color: variables.$table-bg; // Reset for nesting within parents with `background-color`.
 
   th,
   td {
-    padding: $table-cell-padding;
+    padding: variables.$table-cell-padding;
     vertical-align: top;
-    border-top: $table-border-width solid $table-border-color;
+    border-top: variables.$table-border-width solid variables.$table-border-color;
   }
 
   thead th {
     vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    border-bottom: (2 * variables.$table-border-width) solid variables.$table-border-color;
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
+    border-top: (2 * variables.$table-border-width) solid variables.$table-border-color;
   }
 
   table {
-    background-color: $body-bg;
+    background-color: variables.$body-bg;
   }
 }
 
@@ -33,17 +36,17 @@ table {
 //
 // Add borders all around the table and between all the columns.
 table {
-  border: $table-border-width solid $table-border-color;
+  border: variables.$table-border-width solid variables.$table-border-color;
 
   th,
   td {
-    border: $table-border-width solid $table-border-color;
+    border: variables.$table-border-width solid variables.$table-border-color;
   }
 
   thead {
     th,
     td {
-      border-bottom-width: (2 * $table-border-width);
+      border-bottom-width: (2 * variables.$table-border-width);
     }
   }
 }
@@ -54,7 +57,7 @@ table {
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 table {
   tbody tr:nth-of-type(odd) {
-    background-color: $table-accent-bg;
+    background-color: variables.$table-accent-bg;
   }
 }
 
@@ -64,8 +67,8 @@ table {
 // Placed here since it has to come after the potential zebra striping
 table {
   tbody tr {
-    @include hover {
-      background-color: $table-hover-bg;
+    @include function.hover {
+      background-color: variables.$table-hover-bg;
     }
   }
 }

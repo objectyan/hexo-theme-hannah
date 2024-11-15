@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "sass:math";
+@use "variables";
+
 @mixin clear-fixed() {
   &:before,
   &:after {
@@ -9,11 +13,11 @@
   }
 }
 
-@mixin container-fixed($gutter: $grid-gutter-width) {
+@mixin container-fixed($gutter: variables.$grid-gutter-width) {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  floor(($gutter / 2));
-  padding-right: ceil(($gutter / 2));
+  padding-left:  math.floor(calc($gutter / 2));
+  padding-right: math.ceil(calc($gutter / 2));
   @include clear-fixed;
 }
 
@@ -23,7 +27,7 @@
   &[href] {
     &:hover,
     &:focus {
-      background-color: darken($color, 10%);
+      background-color: color.adjust($color, $lightness: -10%);
     }
   }
 }
@@ -76,7 +80,7 @@
   }
   a#{$parent}:hover,
   a#{$parent}:focus {
-    color: darken($color, 10%);
+    color: color.adjust($color, $lightness: -10%);
   }
 }
 
@@ -86,7 +90,7 @@
   }
   a#{$parent}:hover,
   a#{$parent}:focus {
-    background-color: darken($color, 10%);
+    background-color: color.adjust($color, $lightness: -10%);
   }
 }
 

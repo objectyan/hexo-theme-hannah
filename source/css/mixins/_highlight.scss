@@ -1,13 +1,15 @@
+@use "variables";
+
 @mixin code-block() {
-  background: $highlight-background;
+  background: variables.$highlight-background;
   border-style: solid;
-  border-color: $color-border;
+  border-color: variables.$color-border;
   border-width: 0px;
   overflow: auto;
-  padding: $article-padding;
-  color: $highlight-foreground;
-  line-height: $line-height;
-  margin: $article-padding 0px;
+  padding: variables.$article-padding;
+  color: variables.$highlight-foreground;
+  line-height: variables.$line-height;
+  margin: variables.$article-padding 0px;
 }
 @mixin line-numbers() {
   color: #666;

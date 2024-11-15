@@ -1,16 +1,20 @@
+@use "../mixins/function";
+@use "../mixins/highlight";
+@use "../mixins/variables";
+
 // https://github.com/chriskempson/tomorrow-theme
 pre, code {
-  font-family: $font-mono;
+  font-family: variables.$font-mono;
 }
 
 code {
-  background: $color-background;
+  background: variables.$color-background;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
 
 pre {
-  @include code-block;
+  @include highlight.code-block;
   code {
     background: none;
     text-shadow: none;
@@ -20,7 +24,7 @@ pre {
 
 .highlight {
   border-radius: 10px;
-  @include code-block;
+  @include highlight.code-block;
   pre {
     border: none;
     margin: 0;
@@ -36,9 +40,9 @@ pre {
     padding: 0;
   }
   figcaption {
-    @include clear-fixed;
+    @include function.clear-fixed;
     font-size: 0.85em;
-    color: $highlight-comment;
+    color: variables.$highlight-comment;
     line-height: 1em;
     margin-bottom: 1em;
     a {
@@ -48,35 +52,35 @@ pre {
   .gutter {
     width: 3%;
     pre {
-      @include line-numbers;
+      @include highlight.line-numbers;
       text-align: right;
       padding-right: 20px;
     }
   }
   .line {
-    height: $line-height;
+    height: variables.$line-height;
   }
   .line.marked {
-    background: $highlight-selection;
+    background: variables.$highlight-selection;
   }
 }
 
 .gist {
-  margin: 0 $article-padding * -1;
+  margin: 0 variables.$article-padding * -1;
   border-style: solid;
-  border-color: $color-border;
+  border-color: variables.$color-border;
   border-width: 1px 0;
-  background: $highlight-background;
-  padding: 15px $article-padding 15px 0;
+  background: variables.$highlight-background;
+  padding: 15px variables.$article-padding 15px 0;
   .gist-file {
     border: none;
-    font-family: $font-mono;
+    font-family: variables.$font-mono;
     margin: 0;
     .gist-data {
       background: none;
       border: none;
       .line-numbers {
-        @include line-numbers;
+        @include highlight.line-numbers;
         background: none;
         border: none;
         padding: 0 20px 0 0;
@@ -91,15 +95,15 @@ pre {
       border: none;
     }
     .gist-meta {
-      background: $highlight-background;
-      color: $highlight-comment;
-      font: 0.85em $font-sans;
+      background: variables.$highlight-background;
+      color: variables.$highlight-comment;
+      font: 0.85em variables.$font-sans;
       text-shadow: 0 0;
       padding: 0;
       margin-top: 1em;
-      margin-left: $article-padding;
+      margin-left: variables.$article-padding;
       a {
-        color: $color-link;
+        color: variables.$color-link;
         font-weight: normal;
         &:hover {
           text-decoration: underline;
@@ -111,7 +115,7 @@ pre {
 
 pre {
   .comment, .title {
-    color: $highlight-comment;
+    color: variables.$highlight-comment;
   }
   .variable,
   .attribute,
@@ -125,7 +129,7 @@ pre {
   .css .id,
   .css .class,
   .css .pseudo {
-    color: $highlight-red;
+    color: variables.$highlight-red;
   }
   .number,
   .preprocessor,
@@ -133,12 +137,12 @@ pre {
   .literal,
   .params,
   .constant {
-    color: $highlight-orange;
+    color: variables.$highlight-orange;
   }
   .class,
   .ruby .class .title,
   .css .rules .attribute {
-    color: $highlight-green;
+    color: variables.$highlight-green;
   }
   .string,
   .value,
@@ -146,10 +150,10 @@ pre {
   .header,
   .ruby .symbol,
   .xml .cdata {
-    color: $highlight-green;
+    color: variables.$highlight-green;
   }
   .css .hexcolor {
-    color: $highlight-aqua;
+    color: variables.$highlight-aqua;
   }
   .function,
   .python .decorator,
@@ -159,10 +163,10 @@ pre {
   .perl .sub,
   .javascript .title,
   .coffeescript .title {
-    color: $highlight-blue;
+    color: variables.$highlight-blue;
   }
   .keyword,
   .javascript .function {
-    color: $highlight-purple;
+    color: variables.$highlight-purple;
   }
 }

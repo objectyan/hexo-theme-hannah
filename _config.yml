@@ -39,6 +39,10 @@ social:
     url: https://github.com/objectyan
     icon: fh fh-github
     title: GitHub
+  gitee:
+    url: https://gitee.com/objectyan
+    icon: fh fh-gitee
+    title: Gitee
 
 # headImg url and gravatar
 headImg:
