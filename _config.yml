@@ -39,10 +39,6 @@ social:
     url: https://github.com/objectyan
     icon: fh fh-github
     title: GitHub
-  gitee:
-    url: https://gitee.com/objectyan
-    icon: fh fh-gitee
-    title: Gitee
 
 # headImg url and gravatar
 headImg:
@@ -94,5 +90,6 @@ gittalk_comments:
 # auto nofollow
 nofollow:
   enable: true
+  field: site
   exclude:
-    - objectyan.me
+    - 'objectyan.me'
